@@ -39,7 +39,12 @@
           padding: 30px;
         }
 
-        .welcome > h1{
+        .welcometext{
+          align-items: center;
+          margin-left: 120px;
+          border-style: solid;
+          border-color: dark-teal;
+          background-color: teal;
           font-size: 50px;
           color: black;
           display: flex;
@@ -48,6 +53,7 @@
         }
 
 		.welcome > h3{
+          border-style: solid;
           font-size: 50px;
           color: black;
           display: flex;
@@ -65,16 +71,27 @@
           margin-top: -20px;
         }
 
-        .welcome img{
-                border-style: solid;
+        .welcome > img{
                 border-color: white;
                 width: 68%;
-                display: block;
+        }
+
+        .checkProducts {
+          align-items: center;
+          margin-left: 430px;
+          border-style: solid;
+          border-color: dark-teal;
+          background-color: teal;
+          font-size: 25px;
+          color: black;
+          display: inline-block;
+          align-items: center;
+          padding: 5px 10px;
         }
 
     </style>
 </head>
-<body style="background-color: teal;">
+<body style="background-image:url('img/main.jpg');">
 
     <nav>
         <div class="logo">
@@ -87,18 +104,22 @@
     </nav>
 
     <div class="welcome">
+    <div class="welcometext">
 	<%
 	String userName = (String) session.getAttribute("authenticatedUser");
     String Name = "";
 	if (userName != null)
 		out.println("<h3> Welcome to Tara Kee Jhumke, "+ userName+" !</h3>");
 		else
-		response.sendRedirect("login.jsp");;
+		response.sendRedirect("login.jsp");
 	%>
-        <h1><img align=left img src="img/welcome.png"></h1>  
-
     </div>
+    
+    </div>
+
+    <div class="checkProducts">
     <h2><a href="listprod.jsp">Browse through our jewelry!</a></h2>
+    </div>
 
 </body>
 </html>
