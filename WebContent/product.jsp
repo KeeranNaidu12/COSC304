@@ -6,15 +6,15 @@
 
 <html>
 <head>
-<title>Tara Kee Jhumke</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Tara Kee Jhumke</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="background-color: teal;">
 
 <%@ include file="header.jsp" %>
 
 <%
-// Get product name to search for
+    // Get product name to search for
 // TODO: Retrieve and display info for the product
 
     try
@@ -29,20 +29,23 @@
     try ( Connection con = DriverManager.getConnection(url, uid, pw); ) {
         String productId = request.getParameter("id");
 
-        String sql = "select productId, productName, productPrice, productImageURL from product where productId = ?";
+        String sql = "select productId, productName, productPrice, productImageURL, productDesc from product where productId = ?";
         PreparedStatement pst = con.prepareStatement(sql);
         pst.setString(1, productId);
         ResultSet product = pst.executeQuery();
+        String desc = product.getString(5);
         if (product.next()) {
             // Display product name
             out.print("<h2>" + product.getString(2) + "</h2>");
 
+            out.print("<h3>" + desc + "</h3>");
 
             // Display product image
             String[] imgIds = {"1", "2", "3", "4", "5"};
 //            String productImageURL = product.getString(4);
 //            if (productImageURL != null && !productImageURL.isEmpty())
-                out.print("<img src='displayImage.jsp?id=" + productId + "' alt='Product Image' style='max-width:300px; max-height:500px;'>");
+            String imgID = "img/" + productId + ".jpg";
+            out.print("<img src='" + imgID + "' alt='"+ desc + "' style='max-width:200px; max-height:400px;'>");
             out.print("<table><tr>\n" +
                     "<th>Id</th><td>" + product.getString(1) + "</td></tr><tr><th>Price</th><td>" + product.getBigDecimal(3) + "</td></tr>");
             //link to add to cart
@@ -71,4 +74,3 @@
 
 </body>
 </html>
-
