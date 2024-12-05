@@ -58,6 +58,7 @@
             out.println("</td></tr></table>");
 
 
+
         } else {
             out.print("<p>Product not found.</p>");
         }
