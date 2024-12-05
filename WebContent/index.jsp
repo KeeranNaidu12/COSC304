@@ -101,6 +101,7 @@
         <a href="customer.jsp">Customer Info</a>
         <a href="admin.jsp">Administrators</a>
         <a href="logout.jsp">Log Out</a>
+        <a href="showcart.jsp">Go to Cart</a>
     </nav>
 
     <div class="welcome">
