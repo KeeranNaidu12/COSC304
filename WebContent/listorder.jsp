@@ -24,6 +24,8 @@ catch (java.lang.ClassNotFoundException e)
 	out.println("ClassNotFoundException: " +e);
 }
 
+
+
 try ( Connection con = DriverManager.getConnection(url, uid, pw); ) {
     // Create statement
     Statement stmt = con.createStatement();
