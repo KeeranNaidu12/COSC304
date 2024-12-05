@@ -47,7 +47,8 @@ try ( Connection con = DriverManager.getConnection(url, uid, pw); ) {
 	else {
 		String listProduct = "select productId, productName, productPrice from product where productName like ?";
 		PreparedStatement pstmt = con.prepareStatement(listProduct);
-		pstmt.setString(1, name);
+		String subName = "%"+name+"%";
+		pstmt.setString(1, subName);
 		out.println("<h2>Products containing '" + name + "'</h2>");
 		products = pstmt.executeQuery();
 	}
