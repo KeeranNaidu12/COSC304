@@ -64,6 +64,12 @@
 				out.println("<tr><th>User ID</th><td>" + userId + "</td></tr>");
 
 				out.println("</table>");
+
+				String username = (String) session.getAttribute("authenticatedUser");
+				if (username != null) {
+					out.println("<h3><a href=\"custOrders.jsp?username=" + username + "\">View Orders</a></h3>");
+				}
+
 			} else {
 				out.println("No profile found for the logged-in user.");
 			}
