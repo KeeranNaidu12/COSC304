@@ -36,6 +36,10 @@ if (session.getAttribute("loginMessage") != null)
 
 </div>
 
+<div style="margin-left:560px">
+<h2><a href="newAccount.jsp">Create a New Account</a></h2>
+</div>
+
 </body>
 </html>
 
