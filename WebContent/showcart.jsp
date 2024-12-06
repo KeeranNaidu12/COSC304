@@ -54,7 +54,7 @@ if (productList == null) {
 
         // Delete button for removing item from cart
         out.print("<td>");
-        out.print("<form method='post' action='deleteItem.jsp' style='display: inline;'>");
+        out.print("<form method='post' action='removeFromCart.jsp' style='display: inline;'>");
         out.print("<input type='hidden' name='productId' value='" + productId + "'>");
         out.print("<button type='submit'>Delete</button>");
         out.print("</form>");
