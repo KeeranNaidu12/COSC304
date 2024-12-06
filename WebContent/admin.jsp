@@ -67,12 +67,19 @@
             out.println("</tr>");
         }
         out.println("</table>");
+
+
+
     } catch (SQLException e) {
         out.println("<p>Error: " + e.getMessage() + "</p>");
     } finally {
         closeConnection();
     }
+
+    out.println("<h2><a href='adminActions.jsp' style='color: black; text-decoration: none;'>Admin Actions</a></h2>");
 %>
+
+
 
 </body>
 </html>
