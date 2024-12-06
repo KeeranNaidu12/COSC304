@@ -78,7 +78,7 @@
         <button type="submit">Update Product</button>
     </form>
 
-    <form method="post" action="AddProduct.jsp">
+    <form method="post" action="addProduct.jsp">
         <h3>Add Product</h3>
         <label for="productName2">Product Name:</label>
         <input type="text" id="productName2" name="productName" required>
@@ -86,13 +86,16 @@
         <label for="price2">Price:</label>
         <input type="number" id="price2" name="price" step="0.01" required>
 
+        <label for="cat">Category:</label>
+        <input type="number" id="cat" name="category" step="0.01" required>
+
         <label for="description2">Description:</label>
         <textarea id="description2" name="description" rows="4"></textarea>
 
         <button type="submit">Add Product</button>
     </form>
 
-    <form method="post" action="DeleteProduct.jsp">
+    <form method="post" action="deleteProduct.jsp">
         <h3>Delete Product</h3>
         <label for="productId2">Product ID:</label>
         <input type="text" id="productId2" name="productId" required>
